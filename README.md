@@ -6,6 +6,29 @@ To start the server run:
 npm start
 ```
 
+## All User
+
+GET REQUEST URL : ``` /api/user/```
+
+Return data:
+```
+[
+    {
+        "_id": "6198c9f722f384380e704e9e",
+        "email": "shjdg@demo.com",
+        "__v": 0
+    },
+    {
+        "_id": "6198cd73e99ba72d0ff33678",
+        "email": "shjg@demo.com",
+        "name": "Name"
+        "__v": 0
+    },
+    ...
+]
+
+```
+
 ## Sign Up 
 Post Request
 Url :  ``` /api/user/signup ```
@@ -66,3 +89,28 @@ Return data(demo):
     }
 }
 ```
+
+## User Update
+
+Patch Request URL: ```/api/user/update ```
+- Request Header must have a valid token otherwise cannot update data
+- email should be unique 
+Request Header:
+```
+Authorization: "Bearer token"
+```
+Request Body:
+```
+{
+    "email": "newmail@mail.com",
+    "name": "New Name"
+}
+```
+
+Return data:
+```
+{
+    "message": "Successfully updated"
+}
+```
+
